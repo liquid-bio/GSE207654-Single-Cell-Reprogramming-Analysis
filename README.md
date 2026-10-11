@@ -19,7 +19,7 @@ The analysis follows the methodological pipeline described in the original publi
 - **Normalization and integration**: log normalization, highly variable genes, cell-cycle score regression, scaling, and batch correction with BBKNN across time points.
 - **Dimensionality reduction and clustering**: PCA, UMAP visualization and Leiden clustering.
 - **Cell type annotation**: annotating clusters as EB, EB-like, iPEM, iMK-1 and iMK-2 from canonical marker genes (e.g., GYPA for erythroblasts, GP1BA for megakaryocytes) shown in the paper's Figures 5D–5I.
-- **Biological interpretation**: differential expression between iMK-1 and iMK-2 and enrichment analysis with Enrichr (gseapy).
+- **Biological interpretation**: differential expression between iMK-1 and iMK-2 and KEGG pathway enrichment with Enrichr (gseapy).
 - **Doublet analysis**: an additional comparison of clustering with and without Scrublet doublet removal.
 
 ## 📁 Repository Structure
@@ -73,10 +73,3 @@ The analysis follows the methodological pipeline described in the original publi
    ```
 
    The notebook changes to `data/`, copies each sample into `data/outputs/`, and writes the merged object and figures to `data/1-DataPre/`.
-
-## 📝 Notes
-
-- **Corrupted GEO file**: the current GEO matrix of GSM6304416 (iMK_D7) is corrupted, both as a per-sample file and in `GSE207654_RAW.tar`. After 35,944,352 of the 35,951,943 declared entries it continues with an unrelated table, so `scipy.io.mmread` fails on it. Reading only the valid entries gives the same filtered sample as in this analysis (10,603 cells, 18,465 genes).
-- **iMK-2 and doublets**: the paper does not mention doublet removal. The iMK_2 cluster in this analysis disappears after Scrublet doublet removal and has a high mean doublet score (0.32 vs 0.065 overall), consistent with doublets rather than the paper's CD53+ iMK-2 (report, Section 8).
-- **Enrichment labels**: the notebook requests the GO and KEGG libraries in one `gp.enrichr` call. With gseapy 1.1.11 this returns the KEGG results under both labels, so the plots titled "GO" show KEGG pathways.
-- **Batch correction**: the paper uses mutual nearest neighbors within Monocle 3; this analysis uses BBKNN, so cluster numbers and boundaries differ from the paper.
