@@ -1,4 +1,4 @@
-# GSE207654-Single-Cell-Reprogramming-Analysis
+# Reproduction-Qin2022-Erythroblast-to-Megakaryocyte-scRNA-seq
 
 ## 📜 Project Overview
 
@@ -51,8 +51,8 @@ The analysis follows the methodological pipeline described in the original publi
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/liquid-bio/GSE207654-Single-Cell-Reprogramming-Analysis.git
-   cd GSE207654-Single-Cell-Reprogramming-Analysis
+   git clone https://github.com/liquid-bio/Reproduction-Qin2022-Erythroblast-to-Megakaryocyte-scRNA-seq.git
+   cd Reproduction-Qin2022-Erythroblast-to-Megakaryocyte-scRNA-seq
    ```
 
 2. Set up the environment. Conda is recommended:
