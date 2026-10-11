@@ -6,7 +6,7 @@ Qin, J., Zhang, J., Jiang, J., Zhang, B., Li, J., Lin, X., Wang, S., Zhu, M., Fa
 
 Objective: To replicate the core computational findings of the original paper by independently implementing the full scRNA-seq analysis workflow on the publicly available dataset (GSE207654), which examines the reprogramming of erythroblasts into functional megakaryocytes using a small-molecule cocktail.
 
-Context: This project was completed as an advanced coursework assignment, demonstrating proficiency in single-cell genomics analysis and reproducible computational research.
+Context: This project was completed as an advanced coursework assignment, demonstrating proficiency in single-cell genomics analysis and reproducible computational research. The coursework report (English translation) is in [report/report.md](report/report.md).
 
 ## 🔬 Key Analysis Replicated  
 The analysis faithfully follows the methodological pipeline described in the original publication, covering:  
@@ -27,18 +27,18 @@ Biological Interpretation: Conducting differential expression and Gene Ontology 
 ## 🚀 Quick Start
 1. Clone the Repository  
 bash  
-git clone https://github.com/YOUR_USERNAME/GSE207654-Single-Cell-Reprogramming-Analysis.git  
+git clone https://github.com/liquid-bio/GSE207654-Single-Cell-Reprogramming-Analysis.git  
 cd GSE207654-Single-Cell-Reprogramming-Analysis   
 2. Set Up the Computational Environment  
 We recommend using Conda to create an isolated environment with all dependencies:  
 bash  
-conda env create -f environment.yml  
-conda activate sc-reprogramming  
+conda env create -f environment.yaml  
+conda activate scRNA  
 3. Download the Data  
 The raw sequencing data must be downloaded from the Gene Expression Omnibus (GEO):  
 Accession: GSE207654  
-Follow the instructions in data/README.md to download and organize the required MTX and TSV files.  
+Follow the instructions in data/GSE207654/tips.txt and put the required MTX and TSV files in data/GSE207654/.  
 4. Execute the Analysis  
 Open and run the Jupyter notebook to reproduce the entire analysis:  
 bash  
-jupyter notebook analysis_notebook.ipynb  
+jupyter notebook notebooks/code.ipynb  
